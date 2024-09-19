@@ -18,7 +18,7 @@ function Get-XelionPhoneLines {
     # Send the GET request
 	try {
         if (-not $authtoken) {
-            Write-Host "Authenticate to server by using Connect-Xelion with correct parameters"
+            Write-Host "Authenticate to server by using Connect-Xelion to obtain authentication token"
         } else {
             $response = (Invoke-RestMethod -Uri $uri -Method Get -Headers @{Authorization = "xelion $authtoken"} -ContentType "application/json")
             if ($oid) {
