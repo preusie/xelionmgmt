@@ -22,10 +22,10 @@ function Get-XelionTrunks {
         } else {
             $response = (Invoke-RestMethod -Uri $uri -Method Get -Headers @{Authorization = "xelion $authtoken"} -ContentType "application/json")
             if ($oid) {
-                return $response.object
+                $response = $response.object
             }
             else {
-                return $response.data.object
+                $response = $response.data.object
             }
         }
 
