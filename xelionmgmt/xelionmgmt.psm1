@@ -10,3 +10,4 @@ foreach ($file in Get-ChildItem -Path "$PSScriptRoot/internal/scripts" -Filter *
     . $file.FullName
 }
 
+Export-ModuleMember -Function *-Xelion*
