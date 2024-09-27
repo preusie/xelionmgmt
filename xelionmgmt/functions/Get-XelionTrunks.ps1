@@ -1,4 +1,4 @@
-function Get-XelionPhoneLines {
+function Get-XelionTrunks {
 	param (
         [Parameter(Mandatory = $true)]
         [string] $Serverfqdn,
@@ -10,9 +10,9 @@ function Get-XelionPhoneLines {
         [string] $oid
 	)
     if ($oid) {
-        $uri = "https://$($Serverfqdn)/api/v1/$($Xeliontenant)/phonelines/$($oid)"
+        $uri = "https://$($Serverfqdn)/api/v1/$($Xeliontenant)/trunks/$($oid)"
     } else {
-        $uri = "https://$($Serverfqdn)/api/v1/$($Xeliontenant)/phonelines"
+        $uri = "https://$($Serverfqdn)/api/v1/$($Xeliontenant)/trunks"
     }
 	
     # Send the GET request
